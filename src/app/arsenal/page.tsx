@@ -1,16 +1,9 @@
-'use client'
-
 export const dynamic = 'force-dynamic';
 
 import  styles  from'./arsenal.module.css';
-import { useState } from 'react';
 import HerramientasGrid from './Herramientas';
 
-type Filter = "all" | "econometria" | "finanzas" | "desarrollo";
-
 export default function ArsenalPage(){
-    const [active,setActive] = useState<Filter>("all");
-
     return(
         <section className={styles.arsenalSeccion}>
             <div className='max-w-[1200px] mx-auto'>
