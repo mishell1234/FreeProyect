@@ -1,4 +1,4 @@
-import { Tool } from "@/types/arsenal";
+import { Tool } from "@/src/types/arsenal";
 import { 
     Code,
     Braces,
