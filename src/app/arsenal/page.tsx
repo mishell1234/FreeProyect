@@ -1,4 +1,7 @@
 'use client'
+
+export const dynamic = 'force-dynamic';
+
 import  styles  from'./arsenal.module.css';
 import { useState } from 'react';
 import HerramientasGrid from './Herramientas';
