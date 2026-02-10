@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import { supabase } from "@/lib/supabase";
 
 
 export async function POST(req: Request) {
@@ -15,25 +15,31 @@ export async function POST(req: Request) {
             );
         }
 
-        const savedMessage = await prisma.contactMessage.create({
-            data: {
-                name,
-                email,
-                subject,
-                message,
-            },
-        });
+        const { error } = await supabase
+            .from('ContactMessage')
+            .insert([
+                { name, email, subject, message }
+            ]);
+
+        if (error) {
+            console.error('Supabase error', error);
+            return NextResponse.json(
+                { error: 'Error al guardar mensaje' },
+                { status: 500 }
+            );
+        }
 
         return NextResponse.json(
-            { success: true, data: savedMessage},
+            { success: true },
             { status: 201 }
         );
-    }catch(error){
-        console.error("Error al guardar el mensaje", error);
+
+    }catch(err){
+        console.error('API error', err);
 
         return NextResponse.json(
             { error: "Error interno del servidor" },
             { status: 500}
-        )
+        );
     }
 }
