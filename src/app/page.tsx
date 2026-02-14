@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <section className="seccionInicio">
         <div className="text-center mb-[80px]">
-            <h2 className="tituloInicio md:text-5xl text-2xl">Mi Perfil</h2>            
+            <h2 className="tituloInicio md:text-5xl text-2xl">Mishell Solis</h2>            
             <p className="subtituloInicio md:text-lg text-sm">Economista y desarrollador de software con enfoque analítico,
               orientado a datos y automatización de procesos. <a className="linkInicio md:text-sm text-xs" href="/MishellSolis_cv.pdf" download="MishellSolis_cv.pdf" rel="nofollow" target="_blank">Descargar curriculum</a></p>
         </div>
