@@ -1,0 +1,27 @@
+.seccionProyectos {
+	padding: 120px 30px;
+	background: linear-gradient(180deg,
+			var(--primary-black) 0%,
+			var(--carbon-dark) 50%,
+			var(--primary-black) 100%);
+	position: relative;
+}
+
+.tituloProyectos {
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+	background: linear-gradient(135deg,
+              var(--text-primary),
+              var(--accent-gradient-end));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.subtituloProyectos {
+	color: var(--text-secondary);
+	max-width: 600px;
+	margin: 0 auto;
+}

@@ -1,0 +1,85 @@
+.footer {
+    background-color: #0a0a0a;
+}
+
+.work {
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-left: 20px;
+}
+
+.profile {
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.footerDescription {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.socialIcon {
+    width: 40px;
+    height: 40px;
+    background: var(--carbon-medium);
+    border: 1px solid var(--metal-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+    background: linear-gradient(135deg, var(--accent-gradient-end),var(--accent-gradient-start));
+    border-color: var(--accent-gradient-end);
+    color: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(153, 69, 255, 0.3);
+}
+
+.footerSectionTi {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footerLinks {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.footerLinks:hover {
+    color: var(--accent-gradient-end);
+    padding-left: 10px;
+}
+
+.footerBottom {
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+.footerCredits {
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+.footerCreditsA {
+    color: var(--accent-gradient-end);
+    text-decoration: none;
+}
+
+.footerCreditsA:hover {
+    text-decoration: underline;
+}
