@@ -38,11 +38,10 @@ export default function Home() {
                   <div className={`${activeCard === 1 ? "contenedorIconActive" : ""}`}>
                     <div className={`iconInicio ${activeCard === 1 ? "active" : ""}`}>
                       <Image src={imagenes[index]} alt="Foto perfil" width={400} height={400} quality={100} priority className={`imagenInicio ${activeCard === 1 ? "active" : ""}`}/>
-                    </div>
-                    
+                    </div>                    
                   </div>
 
-                  <div className="">                
+                  <div className="contenedorDetalleInicio">                
                     <div className="etiquetaInicio">SOBRE MI</div>
                     <p className={`descripcionInicio ${activeCard === 1 ? "active" : ""}`}>Nací en Lima, Perú, en 1994. Actualmente vivo en Pueblo Libre y me apasiona el análisis estadístico aplicado
                     y el desarrollo de software.</p>
@@ -65,7 +64,7 @@ export default function Home() {
               onClick={() => setActiveCard( activeCard === 2 ? null : 2) }>
                 <div className={`${activeCard === 2 ? "descripcionDetalleActivo" : ""}`}>
                   <div className={`${activeCard === 2 ? "contenedorIconActive" : ""}`}>
-                    <div className={`iconInicio ${activeCard === 2 ? "active" : ""}`}><GraduationCap size={50} className={`transition-all duration-300 ${ activeCard === 2 ? "scale-320" : "scale-100"}`}/></div>
+                    <div className={`iconInicio ${activeCard === 2 ? "active" : ""}`}><GraduationCap size={50} className={`transition-all duration-300 md:w-12 w-6 ${ activeCard === 2 ? "scale-320" : "scale-100 w-12"}`}/></div>
                   </div>
 
                   <div className="">                  
@@ -87,7 +86,7 @@ export default function Home() {
               onClick={() => setActiveCard( activeCard === 3 ? null : 3) }>
                 <div className={`${activeCard === 3 ? "descripcionDetalleActivo" : ""}`}>
                   <div className={`${activeCard === 3 ? "contenedorIconActive" : ""}`}>
-                    <div className={`iconInicio ${activeCard === 3 ? "active" : ""}`}><Briefcase size={50} className={`transition-all duration-300 ${ activeCard === 3 ? "scale-320" : "scale-100"}`}/></div>
+                    <div className={`iconInicio ${activeCard === 3 ? "active" : ""}`}><Briefcase size={50} className={`transition-all duration-300 md:w-12 w-6 ${ activeCard === 3 ? "scale-320" : "scale-100 w-12"}`}/></div>
                   </div>
 
                   <div className="">
@@ -109,7 +108,7 @@ export default function Home() {
               onClick={() => setActiveCard( activeCard === 4 ? null : 4) }>
                 <div className={`${activeCard === 4 ? "descripcionDetalleActivo" : ""}`}>
                   <div className={`${activeCard === 4 ? "contenedorIconActive" : ""}`}>
-                    <div className={`iconInicio ${activeCard === 4 ? "active" : ""}`}><Users size={50} className={`transition-all duration-300 ${ activeCard === 4 ? "scale-320" : "scale-100"}`}/></div>
+                    <div className={`iconInicio ${activeCard === 4 ? "active" : ""}`}><Users size={50} className={`transition-all duration-300 md:w-12 w-6 ${ activeCard === 4 ? "scale-320" : "scale-100 w-12"}`}/></div>
                   </div>
 
                   <div className="">
