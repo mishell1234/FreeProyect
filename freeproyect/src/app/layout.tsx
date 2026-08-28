@@ -1,6 +1,6 @@
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer"
-import "@/src/app/globals.css";
+import "./globals.css";
 import React from "react";
 
 export default function RootLayout(

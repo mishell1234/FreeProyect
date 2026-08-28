@@ -3,7 +3,10 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    const fecha = '2026-08-27';
+    const fecha = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'America/Lima'
+      }
+    ).format(new Date());
 
     const respuesta = await fetch(
       `https://api.decolecta.com/v1/tipo-cambio/sunat?date=${fecha}`,
@@ -33,6 +36,10 @@ export async function GET() {
       process.env.SUPABASE_URL!,
       process.env.SUPABASE_ANON_KEY!
     );
+
+    const { data: usuario } = await supabase.auth.getUser();
+
+    console.log("Usuario:", usuario.user);
 
     const { data, error} = await supabase
       .from('tbl_tc')

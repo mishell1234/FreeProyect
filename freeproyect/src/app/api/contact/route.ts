@@ -3,11 +3,11 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    // 1️⃣ Parsear body
+    //Parsear body
     const body = await req.json();
     const { name, email, subject, message } = body;
 
-    // 2️⃣ Validaciones obligatorias
+    //Validaciones obligatorias
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { error: 'Todos los campos son obligatorios' },
@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // 3️⃣ Validación básica de email
+    //Validación básica de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -24,13 +24,13 @@ export async function POST(req: Request) {
       );
     }
 
-    // 4️⃣ Crear cliente Supabase (EN RUNTIME)
+    //Crear cliente Supabase (EN RUNTIME)
     const supabase = createClient(
       process.env.SUPABASE_URL!,
       process.env.SUPABASE_ANON_KEY!
     );
 
-    // 5️⃣ Insertar en la BD
+    //Insertar en la BD
     const { error } = await supabase
       .from('ContactMessage')
       .insert([
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // 6️⃣ Respuesta OK
+    //Respuesta OK
     return NextResponse.json(
       { message: 'Mensaje enviado correctamente' },
       { status: 201 }
