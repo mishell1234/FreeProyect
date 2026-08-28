@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { GraduationCap , Briefcase , Users, Download } from 'lucide-react';
 import Image from "next/image";
@@ -28,7 +28,7 @@ export default function Home() {
 
         <div className={`gridInicio ${activeCard !== null ? "active" : ""}`}>
             
-            <motion.div 
+            <motion.div
               layout 
               transition={{ type: "tween",stiffness: 100 ,damping:100 ,duration: 0.2, ease:"easeInOut"}}
               className={`cardInicio ${activeCard === 1 ? "active" : ""}`} 
@@ -56,7 +56,7 @@ export default function Home() {
                 </div>
             </motion.div>
             
-            <motion.div 
+            <motion.div
               layout
               transition={{ type: "tween",stiffness: 100 ,damping:100 ,duration: 0.2, ease:"easeInOut"}}
               className={`cardInicio ${activeCard === 2 ? "active" : ""}`} 
@@ -78,7 +78,7 @@ export default function Home() {
                 </div>
             </motion.div>
             
-            <motion.div 
+            <motion.div
               layout
               transition={{ type: "tween",stiffness: 100 ,damping:100 ,duration: 0.2, ease:"easeInOut"}}
               className={`cardInicio ${activeCard === 3 ? "active" : ""}`} 
@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
             </motion.div>
             
-            <motion.div 
+            <motion.div
               layout
               transition={{ type: "tween",stiffness: 100 ,damping:100 ,duration: 0.2, ease:"easeInOut"}} className={`cardInicio ${activeCard === 4 ? "active" : ""}`} 
               onClick={() => setActiveCard( activeCard === 4 ? null : 4) }>
