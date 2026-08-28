@@ -30,7 +30,7 @@ export default function HerramientasGridProyecto() {
                     key={category} 
                     data-category={category}
                     className={`${styles.pestaniaProyecto} Poyecto
-                    ${active === category ? styles.pestaniaPoyectoActive : ""
+                    ${active === category ? styles.pestaniaProyectoActive : ""
                     }`} onClick={() => setActive(category)}>
                         {category === "all"
                             ? "Todas"
