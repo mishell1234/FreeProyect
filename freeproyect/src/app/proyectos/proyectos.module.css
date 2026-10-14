@@ -343,40 +343,74 @@
 
 /*responsive*/
 @media (max-width: 750px) {
-
-	.hexagonoSecundario {
-		width: 200px;
-		height: 250px;
-	}
-
-	.proyectoNombreHexagonoActivo{
-		font-size: 12px;
-	}
-
-	.hexagonoCentralActivo {
-		height: fit-content;
-		width: fit-content;
-		min-width: 240px;
-		box-sizing: border-box;
-		overflow: hidden;
-	}
-
-	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte {
-		min-width: 0;
-        max-height: 600px;
-        padding: 25px 30px;
-		place-items: center;
-		overflow-y: auto;
-		overflow-x: hidden;
-		overscroll-behavior-y: contain;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
+	
+    .proyectoHexagonoGrid {
+        gap: 20px;
+        margin-top: 30px;
     }
 
-	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte:hover {
-		scrollbar-width: thin;
-		scrollbar-color: rgba(153, 69, 255, 0.7) transparent;
-	}
+    .hexagonoSecundario {
+    width: 180px;
+    height: 220px;
+    min-height: 220px;
+    margin: 15px 5px;
+  }
+
+    .proyectoNombreHexagonoActivo {
+        font-size: 12px;
+    }
+
+    .gridProyectoActivo {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        row-gap: 10px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .gridProyectoActivo .hexagonoSecundario {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        min-height: 100%;
+        min-width: 0;
+    }
+
+    .gridProyectoActivo .hexagonoCentral,
+    .gridProyectoActivo .hexagonoCentralActivo {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: fit-content;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 250px;
+  height: auto;
+  box-sizing: border-box;
+  transform: rotate(0deg);
+  padding: 30px;
+}
+
+    .gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gridProyectoActivo .hexagonoCentralActivo .contenidoHexagono {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        transform: rotate(0deg);
+    }
 
 	.cardMeanTc {
 		height: 70px;
@@ -393,6 +427,7 @@
 	.gridTc {
 		display: grid;
 		grid-template-columns: 100px 100px;
-		margin-top: 100px;
+		margin: 50px 100px;
+		place-items: center;
 	}
 }

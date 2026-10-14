@@ -178,13 +178,13 @@ export default function TipoDeCambioDescriptivo() {
                         No hay datos disponibles.
                     </div>
                 ) : (
-                    <div className="h-72 w-full sm:h-96">
+                    <div className="relative h-72 w-full min-w-0 max-w-full sm:h-96">                        
                         <ResponsiveContainer width="100%" height="100%">
                             <LineChart
                                 data={datosGraficos}
                                 margin={{
                                     top: 10,
-                                    right: 12,
+                                    right: 20,
                                     left: 8,
                                     bottom: 8,
                                 }}
@@ -196,6 +196,7 @@ export default function TipoDeCambioDescriptivo() {
 
                                 <XAxis
                                     dataKey="fecha"
+                                    padding={{left: 5, right: 4}}
                                     tick={{ fill: '#94a3b8', fontSize: 11 }}
                                     tickLine={false}
                                     axisLine={{ stroke: '#334155' }}
@@ -270,7 +271,7 @@ export default function TipoDeCambioDescriptivo() {
                 <button
                     type="button"
                     onClick={() => setMostrarTabla((anterior) => !anterior)}
-                    className="w-full rounded-lg border border-cyan-500/30 bg-[#111a27] px-4 py-3 text-sm font-medium text-cyan-300 transition-colors hover:border-cyan-400 hover:bg-[#172436]"
+                    className="w-full rounded-lg border border-cyan-500/30 bg-[#111a27] px-4 py-3 text-sm font-medium text-cyan-300 transition-colors hover:border-cyan-400 hover:bg-[#172436] mx-4"
                     aria-expanded={mostrarTabla}
                     aria-controls="tabla-datos-tc"
                 >
@@ -280,7 +281,7 @@ export default function TipoDeCambioDescriptivo() {
                 {mostrarTabla && (
                     <div
                     id="tabla-datos-tc"
-                    className="mt-4 -mx-3 w-[calc(100%+1.5rem)] min-w-0 overflow-hidden rounded-xl border border-cyan-500/20 bg-[#0b1018] sm:mx-0 sm:w-full"
+                    className="mt-4 mx-2 w-[calc(100%+1.5rem)] min-w-0 overflow-hidden rounded-xl border border-cyan-500/20 bg-[#0b1018] sm:mx-0 sm:w-full"
                     >
                     <div className="border-b border-cyan-500/20 p-4">
                         <h3 className="font-semibold text-white">
@@ -292,16 +293,16 @@ export default function TipoDeCambioDescriptivo() {
                     </div>
                         
                     
-                        <div className="mx-[-4px] w-[calc(100%+8px)] min-w-0 overflow-hidden sm:mx-0 sm:w-full">
-                        <table className="w-full table-fixed border-separate border-spacing-x-0 border-spacing-y-1 text-[11px] sm:border-spacing-y-1.5 sm:text-sm">
+                        <div className="mx-auto w-4/5 min-w-0 max-w-full overflow-x-auto">
+                        <table className="w-full table-fixed border-collapse text-[11px] sm:text-sm">
                             <thead>
-                            <th className="w-[34%] px-2 py-3 text-left font-medium sm:px-4">
+                            <th className="px-1 py-1 text-center sm:px-2 sm:py-2">
                                 Fecha
                                 </th>
-                                <th className="w-[33%] px-1 py-3 text-right font-medium sm:px-4">
+                                <th className="px-1 py-1 text-center sm:px-2 sm:py-2">
                                 Compra (S/)
                                 </th>
-                                <th className="w-[33%] px-1 py-3 text-right font-medium sm:px-4">
+                                <th className="px-1 py-1 text-center sm:px-2 sm:py-2">
                                 Venta (S/)
                                 </th>
                             </thead>
@@ -309,19 +310,19 @@ export default function TipoDeCambioDescriptivo() {
                             <tbody>
                             {[...datosGraficos].reverse().map((registro) => (
                                 <tr key={registro.fecha}>
-                                <td className="overflow-hidden rounded-l-md bg-[#111a27] px-1 py-3 text-left text-gray-300 sm:px-4">
+                                <td className="px-1 py-1 text-center sm:px-2 sm:py-2">
                                 <span className="block truncate text-[9px] leading-tight min-[400px]:text-[8px] sm:text-sm">
                                     {registro.fecha}
                                 </span>
                                 </td>
 
-                                <td className="overflow-hidden bg-[#111a27] px-1 py-3 text-right tabular-nums text-cyan-300 sm:px-4">
+                                <td className="px-1 py-1 text-center sm:px-2 sm:py-2">
                                     <span className="block truncate">
                                     {registro.compra.toFixed(4)}
                                     </span>
                                 </td>
 
-                                <td className="overflow-hidden rounded-r-md bg-[#111a27] px-1 py-3 text-right tabular-nums text-violet-300 sm:px-4">
+                                <td className="px-1 py-1 text-center sm:px-2 sm:py-2">
                                     <span className="block truncate">
                                     {registro.venta.toFixed(4)}
                                     </span>
