@@ -137,7 +137,7 @@ export default function TipoDeCambioDescriptivo() {
                 </div>
             </div>
             
-            <section className="mt-6 w-full rounded-2xl border border-cyan-500/20 bg-[#0b1018] p-4 sm:p-6">
+            <section className="mx-4 mt-6 w-full rounded-2xl border border-cyan-500/20 bg-[#0b1018] p-4 sm:p-6">
                 <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
                     <div>
                         <h2 className="text-lg font-semibold text-white">
@@ -259,7 +259,7 @@ export default function TipoDeCambioDescriptivo() {
                 )}
             </section>
 
-            <div className="mt-4" onClick={(event) => {event.stopPropagation()}}>
+            <div className="mx-4 mt-4" onClick={(event) => {event.stopPropagation()}}>
                 <button
                     type="button"
                     onClick={() => setMostrarTabla((anterior) => !anterior)}
@@ -283,45 +283,46 @@ export default function TipoDeCambioDescriptivo() {
                         {datosGraficos.length} de {periodoGrafico} registros · Compra y venta USD/PEN
                         </p>
                     </div>
-
-                        <div className="max-h-96 overflow-auto">
-                            <table className="w-full min-w-[440px] border-collapse text-sm">
-                                <thead className="sticky top-0 z-10 bg-[#111a27]">
-                                    <tr className="text-left text-gray-300">
-                                    <th className="px-4 py-3 font-medium">Fecha</th>
-                                    <th className="px-4 py-3 text-right font-medium">
-                                        Compra (S/)
+                        
+                    <div className="w-full min-w-0">
+                        <table className="w-full table-fixed border-collapse text-[11px] sm:text-sm">
+                            <thead className="bg-[#111a27]">
+                                <tr className="text-gray-300">
+                                    <th className="w-[36%] px-1.5 py-3 text-left font-medium sm:px-4">
+                                    Fecha
                                     </th>
-                                    <th className="px-4 py-3 text-right font-medium">
-                                        Venta (S/)
+                                    <th className="w-[32%] px-1 py-3 text-right font-medium sm:px-4">
+                                    Compra (S/)
                                     </th>
-                                    </tr>
-                                </thead>
+                                    <th className="w-[32%] px-1 py-3 text-right font-medium sm:px-4">
+                                    Venta (S/)
+                                    </th>
+                                </tr>
+                            </thead>
 
-                                <tbody>
-                                    {[...datosGraficos].reverse().map((registro) => (
-                                    <tr
-                                        key={registro.fecha}
-                                        className="border-t border-slate-700/50 text-gray-300 transition-colors hover:bg-cyan-500/5"
-                                    >
-                                        <td className="whitespace-nowrap px-4 py-3">
+                            <tbody>
+                            {[...datosGraficos].reverse().map((registro) => (
+                                <tr
+                                key={registro.fecha}
+                                className="border-t border-slate-700/50 text-gray-300 hover:bg-cyan-500/5"
+                                >
+                                    <td className="whitespace-nowrap px-1.5 py-3 text-left sm:px-4">
                                         {registro.fecha}
-                                        </td>
-                                        <td className="px-4 py-3 text-right tabular-nums text-cyan-300">
+                                    </td>
+                                    <td className="whitespace-nowrap px-1 py-3 text-right tabular-nums text-cyan-300 sm:px-4">
                                         {registro.compra.toFixed(4)}
-                                        </td>
-                                        <td className="px-4 py-3 text-right tabular-nums text-violet-300">
+                                    </td>
+                                    <td className="whitespace-nowrap px-1 py-3 text-right tabular-nums text-violet-300 sm:px-4">
                                         {registro.venta.toFixed(4)}
-                                        </td>
-                                    </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
                     </div>
                 )}
                 </div>
-
         </MathJaxContext>
     );
 }
