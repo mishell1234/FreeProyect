@@ -70,7 +70,8 @@ export default function HerramientasGridProyecto() {
                                     <div className={`${styles.proyectoDescripcionHexagono} md:text-sm text-[10px]`}>
                                         {`${usarGridActivo ? tool.description1 : tool.description}`}
                                     </div>
-                                </div>)
+                                </div>
+                                )
                             }
                             {isCentral && (<Arrows onPrevious={() => {setVistaIndex(prev => prev - 1)}} onNext={() => {setVistaIndex(prev => prev + 1)}} showPrevious={vistaIndex > 0} showNext={vistaIndex < (tool.vistas?.length ?? 0)}/>)}
                         </div>
