@@ -427,7 +427,7 @@
 	.gridTc {
 		display: grid;
 		grid-template-columns: 100px 100px;
-		margin: 50px 100px;
-		place-items: center;
+		align-items: center;
+		justify-content: center;
 	}
 }
