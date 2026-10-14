@@ -350,11 +350,11 @@
     }
 
     .hexagonoSecundario {
-    width: 200px;
-    height: 240px;
-    min-height: 220px;
-    margin: 15px 5px;
-  }
+		width: 200px;
+		height: 240px;
+		min-height: 220px;
+		margin: 15px 5px;
+	}
 
     .proyectoNombreHexagonoActivo {
         font-size: 12px;
@@ -413,7 +413,7 @@
 
 	.gridProyectoActivo .hexagonoCentralActivo {
 		scrollbar-width: thin;
-		scrollbar-color: #a855f7 #151020;
+		scrollbar-color: transparent transparent;
 	}
 
 	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar {
@@ -421,17 +421,29 @@
 	}
 
 	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar-track {
-		background: #151020;
+		background: transparent;
 		border-radius: 10px;
 	}
 
 	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar-thumb {
-		background: linear-gradient(180deg, #c084fc, #9333ea, #6b21a8);
-		border: 2px solid #151020;
+		background: transparent;
+		border: 2px solid transparent;
 		border-radius: 10px;
 	}
 
-	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar-thumb:hover {
+	.gridProyectoActivo .hexagonoCentralActivo:hover {
+		scrollbar-color: #a855f7 #151020;
+	}
+	.gridProyectoActivo .hexagonoCentralActivo:hover .proyectoHexagonoInte::-webkit-scrollbar-track {
+		background: #151020;
+	}
+
+	.gridProyectoActivo .hexagonoCentralActivo:hover .proyectoHexagonoInte::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #c084fc, #9333ea, #6b21a8);
+		border-color: #151020;
+	}
+
+	.gridProyectoActivo .hexagonoCentralActivo:hover .proyectoHexagonoInte::-webkit-scrollbar-thumb:hover {
 		background: #d8b4fe;
 	}
 	
@@ -449,12 +461,8 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 		scrollbar-width: thin;
-		scrollbar-color: #a855f7 #151020;
+		scrollbar-color: transparent transparent;
 	}
-
-    .gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar {
-        display: none;
-    }
 
     .gridProyectoActivo .hexagonoCentralActivo .contenidoHexagono {
         width: 100%;
@@ -492,7 +500,7 @@
 		overflow-x: hidden;
 
 		scrollbar-width: thin;
-		scrollbar-color: #a855f7 #151020;
+		scrollbar-color: transparent transparent;
 	}
 
 	/* Barra morada para Chrome, Edge y Safari */
@@ -501,18 +509,23 @@
 	}
 
 	.hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar-track {
-		background: #151020;
+		background: transparent;
 		border-radius: 10px;
 	}
 
 	.hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar-thumb {
-		background: linear-gradient(180deg, #c084fc, #9333ea, #6b21a8);
-		border: 2px solid #151020;
+		background: transparent;
+    	border-color: transparent;
 		border-radius: 10px;
 	}
 
-	.hexagonoCentralActivo .proyectoHexagonoInte::-webkit-scrollbar-thumb:hover {
-		background: #d8b4fe;
+	.hexagonoCentralActivo:hover .proyectoHexagonoInte {
+		scrollbar-color: #a855f7 #151020;
+	}
+
+	.hexagonoCentralActivo:hover .proyectoHexagonoInte::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #c084fc, #9333ea, #6b21a8);
+		border-color: #151020;
 	}
 
 	.cardMeanTc {
