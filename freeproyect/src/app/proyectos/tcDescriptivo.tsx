@@ -220,17 +220,24 @@ export default function TipoDeCambioDescriptivo() {
                                     contentStyle={{
                                         backgroundColor: '#111a27',
                                         border: '1px solid #334155',
-                                        borderRadius: '10px',
+                                        borderRadius: '8px',
+                                        padding: '5px 8px',
+                                        fontSize: '11px',
+                                        lineHeight: '1.3',
                                         color: '#fff',
                                     }}
-                                    labelStyle={{ color: '#cbd5e1' }}
-                                    formatter={(valor) =>
-                                        Number(valor).toFixed(4)
-                                    }
-                                    labelFormatter={(fecha) =>
-                                        `Fecha: ${fecha}`
-                                    }
-                                />
+                                    labelStyle={{
+                                        color: '#cbd5e1',
+                                        fontSize: '10px',
+                                        marginBottom: '2px',
+                                    }}
+                                    itemStyle={{
+                                        padding: '1px 0',
+                                        fontSize: '11px',
+                                    }}
+                                    formatter={(valor) => Number(valor).toFixed(4)}
+                                    labelFormatter={(fecha) => `Fecha: ${fecha}`}
+                                    />
 
                                 <Legend />
 
@@ -273,7 +280,7 @@ export default function TipoDeCambioDescriptivo() {
                 {mostrarTabla && (
                     <div
                     id="tabla-datos-tc"
-                    className="mt-4 overflow-hidden rounded-xl border border-cyan-500/20 bg-[#0b1018]"
+                    className="mt-4 -mx-3 w-[calc(100%+1.5rem)] min-w-0 overflow-hidden rounded-xl border border-cyan-500/20 bg-[#0b1018] sm:mx-0 sm:w-full"
                     >
                     <div className="border-b border-cyan-500/20 p-4">
                         <h3 className="font-semibold text-white">
@@ -284,42 +291,47 @@ export default function TipoDeCambioDescriptivo() {
                         </p>
                     </div>
                         
-                    <div className="w-full min-w-0">
-                        <table className="w-full table-fixed border-collapse text-[11px] sm:text-sm">
-                            <thead className="bg-[#111a27]">
-                                <tr className="text-gray-300">
-                                    <th className="w-[36%] px-1.5 py-3 text-left font-medium sm:px-4">
-                                    Fecha
-                                    </th>
-                                    <th className="w-[32%] px-1 py-3 text-right font-medium sm:px-4">
-                                    Compra (S/)
-                                    </th>
-                                    <th className="w-[32%] px-1 py-3 text-right font-medium sm:px-4">
-                                    Venta (S/)
-                                    </th>
-                                </tr>
+                    
+                        <div className="mx-[-4px] w-[calc(100%+8px)] min-w-0 overflow-hidden sm:mx-0 sm:w-full">
+                        <table className="w-full table-fixed border-separate border-spacing-x-0 border-spacing-y-1 text-[11px] sm:border-spacing-y-1.5 sm:text-sm">
+                            <thead>
+                            <th className="w-[34%] px-2 py-3 text-left font-medium sm:px-4">
+                                Fecha
+                                </th>
+                                <th className="w-[33%] px-1 py-3 text-right font-medium sm:px-4">
+                                Compra (S/)
+                                </th>
+                                <th className="w-[33%] px-1 py-3 text-right font-medium sm:px-4">
+                                Venta (S/)
+                                </th>
                             </thead>
 
                             <tbody>
                             {[...datosGraficos].reverse().map((registro) => (
-                                <tr
-                                key={registro.fecha}
-                                className="border-t border-slate-700/50 text-gray-300 hover:bg-cyan-500/5"
-                                >
-                                    <td className="whitespace-nowrap px-1.5 py-3 text-left sm:px-4">
-                                        {registro.fecha}
-                                    </td>
-                                    <td className="whitespace-nowrap px-1 py-3 text-right tabular-nums text-cyan-300 sm:px-4">
-                                        {registro.compra.toFixed(4)}
-                                    </td>
-                                    <td className="whitespace-nowrap px-1 py-3 text-right tabular-nums text-violet-300 sm:px-4">
-                                        {registro.venta.toFixed(4)}
-                                    </td>
+                                <tr key={registro.fecha}>
+                                <td className="overflow-hidden rounded-l-md bg-[#111a27] px-1 py-3 text-left text-gray-300 sm:px-4">
+                                <span className="block truncate text-[9px] leading-tight min-[400px]:text-[8px] sm:text-sm">
+                                    {registro.fecha}
+                                </span>
+                                </td>
+
+                                <td className="overflow-hidden bg-[#111a27] px-1 py-3 text-right tabular-nums text-cyan-300 sm:px-4">
+                                    <span className="block truncate">
+                                    {registro.compra.toFixed(4)}
+                                    </span>
+                                </td>
+
+                                <td className="overflow-hidden rounded-r-md bg-[#111a27] px-1 py-3 text-right tabular-nums text-violet-300 sm:px-4">
+                                    <span className="block truncate">
+                                    {registro.venta.toFixed(4)}
+                                    </span>
+                                </td>
                                 </tr>
                             ))}
                             </tbody>
                         </table>
-                    </div>
+                        </div>
+
                     </div>
                 )}
                 </div>

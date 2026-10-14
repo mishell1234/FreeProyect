@@ -392,8 +392,7 @@
 
 	.gridTc {
 		display: grid;
-		grid-template-columns: 100px;
-		margin-top: 10px;
-		gap: 20px
+		grid-template-columns: 100px 100px;
+		margin-top: 100px;
 	}
 }
