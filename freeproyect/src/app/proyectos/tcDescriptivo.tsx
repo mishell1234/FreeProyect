@@ -137,13 +137,13 @@ export default function TipoDeCambioDescriptivo() {
                 </div>
             </div>
             
-            <section className="mx-4 mt-6 w-full rounded-2xl border border-cyan-500/20 bg-[#0b1018] p-4 sm:p-6">
+            <section className="mx-4 mt-6 w-full rounded-2xl border border-cyan-500/20 bg-[#0b1018] p-4 md:p-6">
                 <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
                     <div>
                         <h2 className="text-lg font-semibold text-white">
                             Evolución del tipo de cambio
                         </h2>
-                        <p className="mt-1 text-sm text-gray-400">
+                        <p className="mt-1 text-md text-gray-400">
                             Compra y venta · USD/PEN
                         </p>
                     </div>
@@ -154,7 +154,7 @@ export default function TipoDeCambioDescriptivo() {
                             setPeriodoGrafico(Number(event.target.value))
                         }
                         onClick={(event) => {event.stopPropagation()}}
-                        className="rounded-lg border border-cyan-500/30 bg-[#111a27] px-3 py-2 text-sm text-white outline-none focus:border-cyan-400"
+                        className="rounded-lg border border-cyan-500/30 bg-[#111a27] px-3 py-2 text-md text-white outline-none focus:border-cyan-400"
                         aria-label="Período del gráfico"
                     >
                         {periodosGrafico.map((cantidad) => (
@@ -178,7 +178,7 @@ export default function TipoDeCambioDescriptivo() {
                         No hay datos disponibles.
                     </div>
                 ) : (
-                    <div className="relative h-72 w-full min-w-0 max-w-full sm:h-96">                        
+                    <div className="relative h-72 w-full min-w-0 max-w-full md:h-96">                        
                         <ResponsiveContainer width="100%" height="100%">
                             <LineChart
                                 data={datosGraficos}
@@ -271,7 +271,7 @@ export default function TipoDeCambioDescriptivo() {
                 <button
                     type="button"
                     onClick={() => setMostrarTabla((anterior) => !anterior)}
-                    className="w-full rounded-lg border border-cyan-500/30 bg-[#111a27] px-4 py-3 text-sm font-medium text-cyan-300 transition-colors hover:border-cyan-400 hover:bg-[#172436] mx-4"
+                    className="w-full rounded-lg border border-cyan-500/30 bg-[#111a27] px-4 py-3 text-md font-medium text-cyan-300 transition-colors hover:border-cyan-400 hover:bg-[#172436] mx-4"
                     aria-expanded={mostrarTabla}
                     aria-controls="tabla-datos-tc"
                 >
@@ -281,28 +281,28 @@ export default function TipoDeCambioDescriptivo() {
                 {mostrarTabla && (
                     <div
                     id="tabla-datos-tc"
-                    className="mt-4 mx-2 w-[calc(100%+1.5rem)] min-w-0 overflow-hidden rounded-xl border border-cyan-500/20 bg-[#0b1018] sm:mx-0 sm:w-full"
+                    className="mt-4 mx-2 w-[calc(100%+1.5rem)] min-w-0 overflow-hidden rounded-xl border border-cyan-500/20 bg-[#0b1018] md:mx-0 md:w-full"
                     >
                     <div className="border-b border-cyan-500/20 p-4">
                         <h3 className="font-semibold text-white">
                         Datos históricos del tipo de cambio
                         </h3>
-                        <p className="mt-1 text-sm text-gray-400">
+                        <p className="mt-1 text-md text-gray-400">
                         {datosGraficos.length} de {periodoGrafico} registros · Compra y venta USD/PEN
                         </p>
                     </div>
                         
                     
                         <div className="mx-auto w-4/5 min-w-0 max-w-full overflow-x-auto">
-                        <table className="w-full table-fixed border-collapse text-[11px] sm:text-sm">
+                        <table className="w-full table-fixed border-collapse text-[11px] md:text-md">
                             <thead>
-                            <th className="px-1 py-1 text-center sm:px-2 sm:py-2">
+                            <th className="px-1 py-1 text-center md:px-2 md:py-2">
                                 Fecha
                                 </th>
-                                <th className="px-1 py-1 text-center sm:px-2 sm:py-2">
+                                <th className="px-1 py-1 text-center md:px-2 md:py-2">
                                 Compra (S/)
                                 </th>
-                                <th className="px-1 py-1 text-center sm:px-2 sm:py-2">
+                                <th className="px-1 py-1 text-center md:px-2 md:py-2">
                                 Venta (S/)
                                 </th>
                             </thead>
@@ -310,19 +310,19 @@ export default function TipoDeCambioDescriptivo() {
                             <tbody>
                             {[...datosGraficos].reverse().map((registro) => (
                                 <tr key={registro.fecha}>
-                                <td className="px-1 py-1 text-center sm:px-2 sm:py-2">
-                                <span className="block truncate text-[9px] leading-tight min-[400px]:text-[8px] sm:text-sm">
+                                <td className="px-1 py-1 text-center md:px-2 md:py-2">
+                                <span className="block truncate text-[9px] leading-tight min-[400px]:text-[8px] md:text-md">
                                     {registro.fecha}
                                 </span>
                                 </td>
 
-                                <td className="px-1 py-1 text-center sm:px-2 sm:py-2">
+                                <td className="px-1 py-1 text-center md:px-2 md:py-2">
                                     <span className="block truncate">
                                     {registro.compra.toFixed(4)}
                                     </span>
                                 </td>
 
-                                <td className="px-1 py-1 text-center sm:px-2 sm:py-2">
+                                <td className="px-1 py-1 text-center md:px-2 md:py-2">
                                     <span className="block truncate">
                                     {registro.venta.toFixed(4)}
                                     </span>
