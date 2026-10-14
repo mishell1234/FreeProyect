@@ -1,3 +1,8 @@
+/*Hexagonos y grid inicial*/
+.contenedorTc {
+	position: relative;
+}
+
 .seccionProyectos {
 	padding: 120px 30px;
 	background: linear-gradient(180deg,
@@ -101,6 +106,7 @@
 				var(--carbon-medium), 
 				var(--carbon-light));
 	border: 2px solid var(--metal-dark);
+	padding: 20px 50px;
 }
 
 .proyectoHexagono {
@@ -133,7 +139,7 @@
 
 .proyectoIconoHexagono {
 	font-size: 48px;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 	color: var(--accent-purple);
 	animation: float 3s ease-in-out infinite;
 }
@@ -150,8 +156,7 @@
 	}
 }
 
-.proyectoNombreHexagono {
-	font-size: 16px;
+.proyectoNombreHexagono {	
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -160,7 +165,235 @@
 	text-align: center;
 }
 
+.proyectoNombreHexagonoActivo{
+		font-size: 18px;
+	}
+
 .proyectoDescripcionHexagono {
 	color: var(--text-secondary);
 }
 
+.titutloProyectoActivo {
+    color: var(--text-primary);
+}
+
+.gridProyectoActivo {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+	grid-template-rows: repeat(8,1fr);
+    align-items: start;
+	column-gap: 0px;
+    row-gap: 5px;
+}
+
+.gridProyectoActivo .hexagonoSecundario {
+    grid-column: 1;
+    width: 180px;
+    height: 90px;
+    margin: 0;
+}
+
+.gridProyectoActivo .hexagonoCentral {
+    grid-column: 2;
+	grid-row: 1 / -1;
+	margin-left: -5px;
+}
+
+.hexagonoCentralActivo .proyectoHexagonoInte {
+    transform: rotate(0deg);
+}
+
+.hexagonoCentralActivo .contenidoHexagono {
+    transform: rotate(0deg);
+}
+
+.hexagonoCentral {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start
+}
+
+.hexagonoSecundario {
+	display: flex;
+	flex-direction: column;
+}
+
+.hexagonoCentralActivo {
+    z-index: 10;
+	width: 100%;
+	height: fit-content;
+}
+
+.hexagonoSecundarioActivo .contenidoHexagono{
+	transform: rotate(0deg);
+	transform-origin: center;
+}
+
+.hexagonoSecundarioActivo .proyectoHexagonoInte{
+	transform: rotate(0deg);
+	transform-origin: center;
+}
+
+.gridProyectoActivo .hexagonoCentralActivo {
+    width: 100%;
+    z-index: 10;	
+}
+
+.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte {
+    min-width: 500px;
+    min-height: 250px;
+    height: auto;
+    transform: rotate(0deg);
+    padding: 50px 60px
+}
+
+.gridProyectoActivo .hexagonoCentralActivo .contenidoHexagono {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    transform: rotate(0deg);
+}
+
+/*Diseño de estadisticas*/
+
+.gridTc {
+	display: grid;
+	grid-template-columns: repeat(2,minmax(0,1fr));
+	margin: 10px;
+}
+
+.cardMeanTc {
+    position: relative;
+    padding: 10px;
+    background: linear-gradient(135deg,
+                rgba(42, 42, 42, 0.2),
+                rgba(26, 26, 26, 0.3));
+    border: 1px solid var(--metal-dark);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+	max-width: 100px
+}
+
+.cardMeanTc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,var(--accent-gradient-end),var(--accent-gradient-start),var(--accent-green));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.cardMeanTc:hover::before {
+    transform: scaleX(1);
+}
+
+.cardMeanTc:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-gradient-end);
+    box-shadow: 0 20px 40px rgba(153, 69 , 255, 0.2);
+    background: linear-gradient(135deg,
+                rgba(153, 69, 255, 0.05),
+                rgba(26, 26, 26, 0.3));
+}
+
+.tituloMeanTc {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--text-primary);
+	text-align: center;
+}
+
+.valorMediaTc {
+    color: var(--text-primary);
+}
+
+.pestaniaArsenal {
+	min-width: 60px;
+	text-align: center;
+	background: var(--carbon-medium);
+	border: 1px solid var(--metal-dark);
+	border-radius: 30px;
+	color: var(--text-secondary);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	user-select: none
+}
+
+.pestaniaArsenal:not(.pestaniaArsenalActive):hover {
+	background: rgba(153, 69, 255, 0.1);
+	border-color: var(--accent-gradient-end);
+	color: var(--text-primary);
+}
+
+.pestaniaArsenalActive {
+	background: linear-gradient(135deg, 
+                var(--accent-gradient-end), 
+                var(--accent-gradient-start));
+	border-color: var(--accent-gradient-end);
+	color: var(--text-primary);
+	box-shadow: 0 5px 20px rgba(153, 69, 255, 0.3)
+}
+
+/*responsive*/
+@media (max-width: 750px) {
+
+	.hexagonoSecundario {
+		width: 200px;
+		height: 250px;
+	}
+
+	.proyectoNombreHexagonoActivo{
+		font-size: 12px;
+	}
+
+	.hexagonoCentralActivo {
+		height: fit-content;
+		width: fit-content;
+		min-width: 240px;
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+
+	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte {
+		min-width: 0;
+        max-height: 600px;
+        padding: 25px 30px;
+		place-items: center;
+		overflow-y: auto;
+		overflow-x: hidden;
+		overscroll-behavior-y: contain;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+    }
+
+	.gridProyectoActivo .hexagonoCentralActivo .proyectoHexagonoInte:hover {
+		scrollbar-width: thin;
+		scrollbar-color: rgba(153, 69, 255, 0.7) transparent;
+	}
+
+	.cardMeanTc {
+		height: 70px;
+		width: 80px;
+		padding: 10px 10px;
+	}
+
+	.pestaniaArsenal {
+		padding: 8px 10px;
+		font-size: 8px;
+		max-width: 50px;
+	}
+
+	.gridTc {
+		display: grid;
+		grid-template-columns: 100px;
+		margin-top: 10px;
+		gap: 20px
+	}
+}

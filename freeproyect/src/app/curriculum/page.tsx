@@ -18,6 +18,8 @@ export default function CurriculumPage() {
                     Bachiller en economía y desarrollador de software, especializado en econometría, 
                     finanzas y desarrollo de aplicaciones web y móviles orientadas a soluciones basadas 
                     en datos.
+                    <br />
+                    <a className="linkInicio md:text-sm text-xs ms-auto" href="/MishellSolis_cv.pdf" download="MishellSolis_cv.pdf" rel="nofollow" target="_blank">Descargar curriculum completo</a>
                 </p>
 
                 <div className={`${styles.tarjetasCurriculum} grid grid-cols-1 lg:grid lg:grid-cols-3`}>

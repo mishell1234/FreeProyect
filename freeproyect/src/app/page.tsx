@@ -23,7 +23,7 @@ export default function Home() {
         <div className="text-center mb-[80px]">
             <h2 className="tituloInicio md:text-5xl text-2xl">Mishell Solis</h2>            
             <p className="subtituloInicio md:text-lg text-sm">Economista y desarrollador de software con enfoque analítico,
-              orientado a datos y automatización de procesos. <a className="linkInicio md:text-sm text-xs" href="/MishellSolis_cv.pdf" download="MishellSolis_cv.pdf" rel="nofollow" target="_blank">Descargar curriculum</a></p>
+              orientado a datos y automatización de procesos.<a className="linkInicio md:text-sm text-xs" href="/CV_MishellSolis.pdf" download="CV_MishellSolis.pdf" rel="nofollow" target="_blank">Descargar curriculum</a></p>
         </div>
 
         <div className={`gridInicio ${activeCard !== null ? "active" : ""}`}>

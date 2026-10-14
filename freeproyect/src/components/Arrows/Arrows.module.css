@@ -1,0 +1,123 @@
+.carouselArrows {
+    position: absolute;
+    inset: 0;
+
+    z-index: 100;
+    pointer-events: none;
+}
+
+.bottonArrow {
+    position: absolute;
+
+    height: 100%;
+    width: 100px;
+
+    display: flex;
+    align-items: center;
+
+
+    margin: 10px;
+
+    background: transparent;
+    border: none;
+
+    color: rgba(153, 69, 255, 0.7);
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+
+    animation: arrowPulse 1.8s ease-in-out infinite;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        filter 0.25s ease;
+}
+
+/* Las tres flechas */
+.bottonArrow svg {
+    width: 80px;
+    height: 90px;
+    margin-left: -60px;
+
+    filter: drop-shadow(
+        0 0 6px rgba(153, 69, 255, 0.45)
+    );
+}
+
+/* La primera no se solapa */
+.bottonArrow svg:first-child {
+    margin-left: 0;
+}
+
+/* Flechas izquierdas */
+.arrowPrevious {
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Flechas derechas */
+.arrowNext {
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Hover izquierda */
+.arrowPrevious:hover {
+    color: rgba(153, 69, 255, 1);
+
+    transform: translateY(-50%) translateX(-5px);
+
+    filter: brightness(1.3);
+}
+
+/* Hover derecha */
+.arrowNext:hover {
+    color: rgba(153, 69, 255, 1);
+
+    transform: translateY(-50%) translateX(5px);
+
+    filter: brightness(1.3);
+}
+
+/* Brillo general */
+.bottonArrow:hover {
+    filter: brightness(1.3);
+}
+
+@keyframes arrowPulse {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media(max-width:750px) {
+
+    .bottonArrow {
+        max-height: 50% ;
+    }
+
+    .bottonArrow svg {
+    width: 100px;
+    height: 100px;
+    margin-left: -100px;
+    }
+
+    .arrowPrevious {
+        left: -22px;
+    }
+
+    .arrowNext {
+        right: -22px;
+
+    }
+}

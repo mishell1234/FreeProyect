@@ -11,8 +11,7 @@ export default function Header(){
 
     return (
         <header className={`${styles.header} w-full fixed top-0 z-[1000]`}>
-             <nav className="flex justify-between items-center max-w-[1400px]
-              mx-auto px-3 py-5 select-none">
+             <nav className="flex justify-between items-center max-w-[1400px]mx-auto px-3 py-5 select-none">
                 <Link href="/" className="flex items-center relative no-underline">
                     <div className="w-[45px] h-[45px] relative mr-[15px]">
                         <div className={styles.logowp}>

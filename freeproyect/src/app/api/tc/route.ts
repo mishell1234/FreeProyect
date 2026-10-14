@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
+
 export async function GET() {
   try {
     const fecha = new Intl.DateTimeFormat('en-CA', {
